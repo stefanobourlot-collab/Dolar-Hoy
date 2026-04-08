@@ -3,11 +3,14 @@ Cotizacion de dolar en tiempo real
 import requests
 from datetime import datetime
 
+import requests
+from datetime import datetime
+
 def obtener_dolar():
     try:
         response = requests.get("https://api.bluelytics.com.ar/v2/latest")
         data = response.json()
-        return data["blue"]["value_sell"]  # Precio de venta del dólar blue
+        return data["blue"]["value_sell"] # Precio de venta del dólar blue
     except:
         # Si falla la conexión, usa un valor por defecto
         return 1000
